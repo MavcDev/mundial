@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ServiceEquipoProvider } from '../../providers/service-equipo/service-equipo';
 import { LoadingController } from 'ionic-angular';
 import { ViewEquipoPage } from '../../pages/view-equipo/view-equipo';
+import { ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the ListEquipoPage page.
@@ -26,7 +27,8 @@ export class ListEquipoPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public equipoProvider: ServiceEquipoProvider,
-    public loading : LoadingController ) {
+    public loading : LoadingController,
+    public modalCtrl: ModalController ) {
   }
 
   ionViewDidLoad() {
@@ -65,8 +67,13 @@ export class ListEquipoPage {
         } 
       })
     }else{
-        return this.equipos = this.auxEquipos;
+        this.equipos = this.auxEquipos;
     }
+  }
+
+  openModal(fifaCode){
+    const modal = this.modalCtrl.create(ViewEquipoPage, {'fifaCode': fifaCode});
+    modal.present();
   }
 
   openTeam(fifaCode){
