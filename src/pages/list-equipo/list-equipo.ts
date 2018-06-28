@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ServiceEquipoProvider } from '../../providers/service-equipo/service-equipo';
 import { LoadingController } from 'ionic-angular';
+import { ViewEquipoPage } from '../../pages/view-equipo/view-equipo';
 
 /**
  * Generated class for the ListEquipoPage page.
@@ -66,5 +67,9 @@ export class ListEquipoPage {
     }else{
         return this.equipos = this.auxEquipos;
     }
+  }
+
+  openTeam(fifaCode){
+    this.navCtrl.push( ViewEquipoPage, {'fifaCode': fifaCode} );
   }
 }

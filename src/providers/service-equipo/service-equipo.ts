@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ServiceEquipoProvider {
 
-  url = "https://worldcup.sfg.io/teams/";
+  url = "https://worldcup.sfg.io/teams/";  
 
   constructor(public http: HttpClient) {
     console.log('Hello ServiceEquipoProvider Provider');
@@ -18,6 +18,5 @@ export class ServiceEquipoProvider {
 
   getall(){
     return this.http.get( this.url  );
-  }
-  
+  }    
 }

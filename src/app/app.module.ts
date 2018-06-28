@@ -9,13 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListEquipoPage } from '../pages/list-equipo/list-equipo';
+import { ViewEquipoPage } from '../pages/view-equipo/view-equipo';
+
 import { ServiceEquipoProvider } from '../providers/service-equipo/service-equipo';
+import { ServiceResultadoProvider } from '../providers/service-resultado/service-resultado';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListEquipoPage
+    ListEquipoPage,
+    ViewEquipoPage
   ],
   imports: [
     BrowserModule,
@@ -26,13 +30,15 @@ import { ServiceEquipoProvider } from '../providers/service-equipo/service-equip
   entryComponents: [
     MyApp,
     HomePage,
-    ListEquipoPage
+    ListEquipoPage,
+    ViewEquipoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ServiceEquipoProvider
+    ServiceEquipoProvider,
+    ServiceResultadoProvider
   ]
 })
 export class AppModule {}

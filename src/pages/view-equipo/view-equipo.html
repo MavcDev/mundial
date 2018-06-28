@@ -7,12 +7,25 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ViewEquipo</ion-title>
+    <ion-title> {{nombre}} </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let item of equipo">                         
+          <h2> Grupo : {{ item.group_letter }} </h2>
+          <h2> Puntos : {{ item.points }} </h2>
+          <h2> Partidos Jugados : {{ item.games_played }} </h2>
+          <h2> Partidos Ganados : {{ item.wins }} </h2>
+          <h2> Partidos Perdios : {{ item.losses }} </h2>
+          <h2> Partidos Empatados : {{ item.draws }} </h2>
+          <h2> Goles Marcados : {{ item.goals_for }} </h2>
+          <h2> Goles a Favor : {{ item.goals_against }} </h2>
+          <h2> Goles Encontra : {{ item.goal_differential }} </h2>                    
+        </ion-item>
+      </ion-list>
 
 </ion-content>
