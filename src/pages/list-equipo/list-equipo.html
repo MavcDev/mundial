@@ -7,18 +7,29 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ListEquipo</ion-title>
+    <ion-title>Equipos</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
 
+  <ion-item>
+    <ion-label>Filter</ion-label>
+    <ion-select  [(ngModel)]="filter">
+      <ion-option value="1" selected="true">Nombre</ion-option>
+      <ion-option value="2">Nombre FIFA</ion-option>
+      <ion-option value="3">Grupo</ion-option>      
+    </ion-select>
+  </ion-item>
+
+  <ion-searchbar (ionInput)="getFilter($event)"></ion-searchbar>
+
   <ion-list>
     <ion-item *ngFor="let item of equipos">
-      <h2> Nombre: {{ item.country }} </h2>
+      <h2> Equipo: {{ item.country }} </h2>
       <h3> FIFA: {{ item.fifa_code }} </h3>
-      <p> Grupo: {{ item..group_letter }} </p>
+      <p> Grupo: {{ item.group_letter }} </p>
     </ion-item>
   </ion-list>
 
